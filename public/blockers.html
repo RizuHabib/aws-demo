@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        #delete{
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        #blockers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #blockers td,
+        #blockers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #blockers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #blockers tr:hover {
+            background-color: #ddd;
+        }
+
+        #blockers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            /* background-color: #4CAF50; */
+            color: white;
+        }
+    </style>
+</head>
+
+<body id = 'body'>
+    <h1> Add your new blocker here...  and That too Dynamically!</h1>
+    <form>
+        <input id="title" placeholder="title">
+        <input id="startTime" placeholder="startTime">
+        <input id="endTime" placeholder="endTime">
+        <input id="description" placeholder="description">
+
+        <button class = 'button' id="post"> ADD </button>
+    </form>
+
+    <button id='delete' id="post"> Clear All </button>
+    <p>ACTIVE BLOCKERS</p>
+    <table id="blockers">
+        <tr>
+            <th>title</th>
+            <th>start time</th>
+            <th>end time</th>
+            <th>description</th>
+        </tr>
+
+    </table>
+</body>
+
+<script src="index.js"></script>
+
+</html>
