@@ -1,6 +1,7 @@
 var express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
+const path = require('path');
 
 const con = mysql.createConnection({
     host: "database-instance-1.cbrcz04uccwb.us-east-1.rds.amazonaws.com",
@@ -19,6 +20,17 @@ con.connect(function (err) {
 
 var app = express();
 app.use(cors());
+app.engine('html', require('ejs').renderFile);
+
+
+app.get('/', (req, res) => {
+    res.render(path.join(__dirname + '/public/home.html'));
+});
+
+app.get('/records', (req, res) => {
+    res.render(path.join(__dirname + '/public/blockers.html'));
+});
+
 
 app.post('/blockers', (req, res) => {
     if (req.query.title && req.query.startTime && req.query.endTime && req.query.description) {
@@ -61,7 +73,7 @@ app.delete('/blockers', function (req, res) {
 
 
 app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+    console.log('app listening on port 3000!');
 });
 
 
