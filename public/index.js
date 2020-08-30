@@ -2,7 +2,7 @@
 window.addEventListener('load', e => {
 
     console.log('body loaded');
-    fetch(`http://localhost:3000/blockers`)
+    fetch(`54.237.14.165:3000/blockers`)
         .then(response => response.json())
         .then(res => {
             var table = document.getElementById("blockers");
@@ -34,7 +34,7 @@ document.getElementById("post").addEventListener("click", function (event) {
     console.log(startTime);
     console.log('-------------------------------------------');
 
-    fetch(`http://localhost:3000/blockers?title=${title}&startTime=${startTime}
+    fetch(`54.237.14.165:3000/blockers?title=${title}&startTime=${startTime}
     &endTime=${endTime}&description=${description}`,
         {
             method: 'POST',
@@ -74,7 +74,7 @@ document.getElementById("post").addEventListener("click", function (event) {
 document.getElementById("delete").addEventListener("click", function (event) {
     event.preventDefault();
     console.log('delete button pressed');
-    fetch(`http://localhost:3000/blockers`,
+    fetch(`54.237.14.165:3000/blockers`,
         {
             method: 'DELETE',
             mode: 'cors',
